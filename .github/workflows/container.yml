@@ -27,8 +27,10 @@ jobs:
         run: |
           npm run build
 
-      - name: Get AWS CLI
+      - name: Install AWS CLI
         uses: chrislennon/action-aws-cli@v1.1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
       - name: Upload dist to AWS S3
         run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
