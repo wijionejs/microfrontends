@@ -10,7 +10,7 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "container",
+      name: "marketing",
       filename: "remoteEntry.js",
       exposes: {
         "./mount": "./src/mount",
