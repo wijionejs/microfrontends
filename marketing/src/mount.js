@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { App } from "./App";
 import { createMemoryHistory } from "history";
 
-export const mount = (el, { onNavigate }) => {
+export const mount = (el, { onNavigate } = {}) => {
   const history = createMemoryHistory();
 
   if (onNavigate) {
