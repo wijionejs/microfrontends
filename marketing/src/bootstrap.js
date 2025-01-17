@@ -1,3 +1,6 @@
 import { mount } from "./mount";
+import { createBrowserHistory } from "history";
 
-mount(document.getElementById("root"));
+const history = createBrowserHistory();
+
+mount(document.getElementById("root"), { history });

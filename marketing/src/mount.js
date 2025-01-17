@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { App } from "./App";
 import { createMemoryHistory } from "history";
 
-export const mount = (el, { onNavigate } = {}) => {
-  const history = createMemoryHistory();
+export const mount = (el, { onNavigate, history } = {}) => {
+  const _history = history ?? createMemoryHistory();
 
   if (onNavigate) {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App history={_history} />, el);
 };
