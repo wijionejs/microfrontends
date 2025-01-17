@@ -15,7 +15,9 @@ const MarketingApp = () => {
       }
     };
 
-    mount(ref.current, { onNavigate });
+    const { onParentNavigate } = mount(ref.current, { onNavigate });
+
+    history.listen(onParentNavigate);
   }, []);
 
   return <div ref={ref} />;
