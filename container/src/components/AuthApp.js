@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { mount } from "auth/mount";
 
-const AuthApp = () => {
+const AuthApp = ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -15,7 +15,7 @@ const AuthApp = () => {
       }
     };
 
-    const { onParentNavigate } = mount(ref.current, { onNavigate });
+    const { onParentNavigate } = mount(ref.current, { onNavigate, onSignIn });
 
     history.listen(onParentNavigate);
   }, []);
